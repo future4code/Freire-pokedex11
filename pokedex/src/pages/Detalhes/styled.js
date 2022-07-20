@@ -9,6 +9,12 @@ export const Header = styled.div`
     padding-left: 80px;
     padding-right: 40px;
     background-color: white;
+    @media (max-width: 500px) {
+        padding-left: 10px;
+        padding-right: 5px;
+        align-items: center;
+        height: 100px;
+    }
     div {
         display: flex;
         cursor: pointer;
@@ -16,6 +22,13 @@ export const Header = styled.div`
             margin-top: 70px;
             width: 7.29px;
             height: 14.58px;
+            @media (max-width: 500px) {
+                height: 14px;
+                width: auto;
+                margin-right: 15px;
+                margin-left: 30px;
+                margin-top: 0px;
+            }
         }
         p {
             margin-top: 60px;
@@ -23,6 +36,9 @@ export const Header = styled.div`
             line-height: 36px;
             font-weight: 700;
             margin-left: 10.38px;
+            @media (max-width: 500px) {
+                display: none;
+            }
         }
     }
     img {
@@ -30,6 +46,11 @@ export const Header = styled.div`
         height: 113px;
         margin-top: 21px;
         cursor: pointer;
+        @media (max-width: 500px) {
+            width: auto;
+            height: 50px;
+            margin-top: 0;
+        }
     }
     button {
         width: 226px;
@@ -40,6 +61,15 @@ export const Header = styled.div`
         background-color: #FF6262;
         color: white;
         cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        &:hover {
+            background-color: #fac80a;
+        }
+        @media (max-width: 500px) {
+            width: 100px;
+            height: 50px;
+            margin-top: 0;
+        }
     }
 `
 
@@ -62,7 +92,7 @@ export const Container = styled.div`
 
 export const DetalhesPokemon = styled.div`
     background-color: #729F92;
-    height: 663px;
+    min-height: 600px;
     margin-top: 56px;
     margin-left: 25px;
     margin-right: 25px;
@@ -70,6 +100,14 @@ export const DetalhesPokemon = styled.div`
     background-image: url(${PokeBola});
     background-repeat: no-repeat;
     background-position: right 50%;
+    padding-bottom: 30px;
+    @media (max-width: 500px) {
+        height: auto;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 15px;
+    }
 `
 export const FotoTitulo = styled.img`
         position: absolute;
@@ -77,12 +115,22 @@ export const FotoTitulo = styled.img`
         top: 150px;
         width: 270px;
         height: 270px;
+        @media (max-width: 500px) {
+            height: 100px;
+            width: auto;
+            top: 200px;
+        }
 `
 
 export const DetalhesBox = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 50%;
     column-gap: 80px;
+    @media (max-width: 500px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 20px;
+    }
 `
 
 export const Fotos = styled.div`
@@ -91,8 +139,20 @@ export const Fotos = styled.div`
     row-gap: 20px;
     margin-left: 44px;
     margin-top: 30px;
+    width: 100%;
     div {
+        display: flex;
         border-radius: 8px;
+        background-color: white;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        img {
+            max-width: 100px;
+        }
+    }
+    @media (max-width: 500px) {
+        margin-left: 0;
     }
 `
 
@@ -121,49 +181,4 @@ export const ColunaTres = styled.div`
         margin-top: 0;
         margin-bottom: 10px;
     }
-`
-
-export const Estilo = styled.div`
-    display: flex;
-    justify-content: space-between;
-    background-color: #AD61AE;
-    width: 100px;
-    border-radius: 8px;
-    border: dashed 1px white;
-    img {
-        padding: 5px 10px;
-        width: 20px;
-        height: 20px;
-    }
-    p {
-        margin-top: 0px;
-        font-size: 14px;
-        font-weight: 400;
-        padding: 5px 10px;
-    }
-`
-
-export const Moves = styled.div`
-    background-color: white;
-    border-radius: 8px;
-    width: 292px;
-    margin-top: 30px;
-    height: 445px;
-    h3 {
-        color: black;
-        font-size: 24px;
-        font-weight: 800;
-        padding: 18px 0px 0px 18px;
-        margin: 0px;
-    }
-`
-
-export const Move = styled.div`
-    background-color: #ECECEC;
-    border-radius: 8px;
-    border: dashed 1px #000000;
-    width: 100px;
-    text-align: center;
-    padding: 5px;
-    margin-left: 18px;
 `
