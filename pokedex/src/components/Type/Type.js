@@ -1,12 +1,12 @@
-import { Estilo } from './styled';
-import Poison from '../../assets/images/poison.png'
+import { ContainerTypes, Img } from './styled';
 
 function Type(props) {
     return (
-        <Estilo>
-            <img src={Poison} alt='imagem Poison' />
-            <p> Poison </p>
-        </Estilo>
+        <ContainerTypes>
+            {props.listaTypes.map((type) => {
+                return <Img src={require(`../../assets/images/types/${type.type.name}.png`)} alt={`imagem ${type.type.name}`} />
+            })}
+        </ContainerTypes>
     );
   }
   

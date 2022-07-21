@@ -1,9 +1,9 @@
 import { Div } from './styled';
 
-function Move() {
+function Move(props) {
     return (
       <div>
-            <Div> Razor Wind </Div>
+            <Div> {props.name} </Div>
       </div>
     );
   }

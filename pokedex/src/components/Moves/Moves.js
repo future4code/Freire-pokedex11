@@ -1,12 +1,16 @@
 import { Div } from './styled';
 import Move from '../Move/Move';
 
-function Moves() {
+function Moves(props) {
     return (
       <div>
         <Div>
             <h3> Moves: </h3>
-            <Move/>
+              {props.listaMoves.map((move) => {
+                return(
+                  <Move name={move.move.name}/>
+                )
+              })}
         </Div>
       </div>
     );

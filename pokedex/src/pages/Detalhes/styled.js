@@ -148,7 +148,7 @@ export const Fotos = styled.div`
         align-items: center;
         justify-content: center;
         img {
-            max-width: 100px;
+            width: 150px;
         }
     }
     @media (max-width: 500px) {

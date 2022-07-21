@@ -1,19 +1,30 @@
 import Stats from "../Stats/Stats";
 import { Titulo, Total, Name, Number } from './styled';
 
-function BaseStats() {
+function BaseStats(props) {
+
+  const listaStats = props.listaStatus.map((stat) => {
+    return(
+      <Stats name={stat.stat.name} value={stat.base_stat} effort={stat.effort}/>
+    )
+  })
+
+  const totalStats = () => {
+    let totalPower = 0
+
+    props.listaStatus.forEach(stats => {
+      totalPower += stats.base_stat
+    });
+    return totalPower
+  }
+
     return (
       <div>
         <Titulo> Base Stats </Titulo>
-        <Stats name={'power'} value={55}/>
-        <Stats name={'power'} value={39}/>
-        <Stats name={'power'} value={10}/>
-        <Stats name={'power'} value={100}/>
-        <Stats name={'power'} value={40}/>
-        <Stats name={'power'} value={52}/>
+        {listaStats}
         <Total>
           <Name> Total </Name>
-          <Number><b> 55 </b></Number>
+          <Number><b> {totalStats()} </b></Number>
         </Total>
       </div>
     );

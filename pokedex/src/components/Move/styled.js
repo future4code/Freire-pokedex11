@@ -8,4 +8,5 @@ export const Div = styled.div`
     text-align: center;
     padding: 5px;
     margin-left: 18px;
+    margin-bottom: 20px;
 `

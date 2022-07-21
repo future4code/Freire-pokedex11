@@ -5,7 +5,7 @@ function Stats(props) {
         <Container>
             <Name> {props.name} </Name>
             <Number> {props.value} </Number>
-            <Bar value={props.value}></Bar>
+            <Bar value={props.value} effort={props.effort}></Bar>
         </Container>
     );
   }

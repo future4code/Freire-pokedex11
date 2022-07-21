@@ -27,6 +27,6 @@ export const Number = styled.p`
 export const Bar = styled.div`
     width: ${props => props.value}%;
     height: 13px;
-    background-color: red;
+    background-color: ${props => props.effort === 0 ? '#FF7C2D' : '#FFDD6A'};
     border-radius: 3px;
 `
