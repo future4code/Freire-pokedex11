@@ -17,12 +17,13 @@ const Pokedex = (props) => {
   return (
     <div>
       <div className="pokedex-header">
-        <h1>Pokedex</h1>
+        <h1>Todos os Pokemons</h1>
         <Pagination
             page={page+1}
             totalPages={totalPages}
             onLeftClick={onLeftClickHandler}
             onRightClick={onRightClickHandler}
+            
         />
       </div>
       {loading ? (
@@ -32,6 +33,7 @@ const Pokedex = (props) => {
           {pokemons && pokemons.map((pokemon, index) => {
             return (
               <Pokemon key={index}  pokemon={pokemon}/>
+              
             );
           })}
         </div>
