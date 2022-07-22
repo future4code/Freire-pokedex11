@@ -7,8 +7,6 @@ import Searchbar from "./components/Searchbar";
 import { FavoriteProvider } from "./contexts/favoritesContext";
 
 
-
-
 const favoritesKey = "f"
 function App() {
   const [page, setPage] = useState(0);
@@ -17,7 +15,6 @@ function App() {
   const [notFound, setNotFound] = useState(false);
   const [pokemons, setPokemons] = useState([]);
   const [favorites, setFavorites] = useState([]);
-
 
   const itensPerPage = 25;
   const fetchPokemons = async () => {
@@ -63,6 +60,10 @@ function App() {
     }
     window.localStorage.setItem(favoritesKey, JSON.stringify(updatedFavorites))
     setFavorites(updatedFavorites);
+  }
+
+  const removePokemonFromFavorites = (id) => {
+    
   }
 
   const onSearchHandler = async (pokemon) => {

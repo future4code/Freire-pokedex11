@@ -1,19 +1,25 @@
-import { Header, Container, DetalhesPokemon, DetalhesBox, FotoTitulo, Fotos, BaseStatsBox, ColunaTres } from './styled';
+import { GlobalStyled, Header, Container, DetalhesPokemon, DetalhesBox, FotoTitulo, Fotos, BaseStatsBox, ColunaTres } from './styled';
 import Voltar from '../../assets/vectors/seta-voltar.png';
 import Logo from '../../assets/images/logo.png';
-import PokemonTitulo from '../../assets/images/pokemon-titulo.png';
 import BaseStats from '../../components/BaseStats/BaseStats';
 import Type from '../../components/Type/Type';
 import Moves from '../../components/Moves/Moves';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Detalhes() {
   const { id } = useParams();
 
   const [ pokemon, setPokemon ] = useState({});
   const [ loading, setLoading ] = useState(true);
+
+  const navigate = useNavigate()
+
+  const goToIndex = () => {
+    navigate('/')
+  }
 
   const handlePokemonDetails = () => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
@@ -35,8 +41,9 @@ function Detalhes() {
   
   return (
       <div>
+        <GlobalStyled/>
         <Header>
-          <div>
+          <div onClick={goToIndex}>
             <img src={Voltar} alt='seta voltar'/>
             <p><u> Todos os Pokémons </u></p>
           </div>
