@@ -17,3 +17,9 @@ export const Div = styled.div`
         width: 100%;
     }
 `
+
+export const ListaMoves = styled.div`
+    height: 350px;
+    max-height: 350px;
+    overflow-y: scroll;
+`

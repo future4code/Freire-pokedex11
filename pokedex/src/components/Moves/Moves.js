@@ -1,4 +1,4 @@
-import { Div } from './styled';
+import { Div, ListaMoves } from './styled';
 import Move from '../Move/Move';
 
 function Moves(props) {
@@ -6,11 +6,13 @@ function Moves(props) {
       <div>
         <Div>
             <h3> Moves: </h3>
-              {props.listaMoves.map((move) => {
+            <ListaMoves>
+              {props.listaMoves.map((move, index) => {
                 return(
-                  <Move name={move.move.name}/>
+                  <Move key={index} name={move.move.name}/>
                 )
               })}
+            </ListaMoves>
         </Div>
       </div>
     );

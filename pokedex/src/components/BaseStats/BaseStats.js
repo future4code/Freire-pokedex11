@@ -3,9 +3,9 @@ import { Titulo, Total, Name, Number } from './styled';
 
 function BaseStats(props) {
 
-  const listaStats = props.listaStatus.map((stat) => {
+  const listaStats = props.listaStatus.map((stat, index) => {
     return(
-      <Stats name={stat.stat.name} value={stat.base_stat} effort={stat.effort}/>
+      <Stats name={stat.stat.name} value={stat.base_stat} effort={stat.effort} key={index}/>
     )
   })
 

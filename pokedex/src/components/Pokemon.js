@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { typesPt, typesIcons} from "../Themes/pokemonTypeColors";
 import { Tooltip } from "@chakra-ui/react";
 import FavoriteContext from "../contexts/favoritesContext";
+import { useNavigate } from 'react-router-dom';
 
 import styled from "styled-components";
 
@@ -12,6 +13,13 @@ export const IconeImg = styled.img`
      `
 
 const Pokemon = (props) => {
+
+  const navigate = useNavigate()
+
+  const goToDetailPage = () => {
+    navigate('detalhes/1')
+  }
+
   const { favoritePokemons, updateFavoritePokemons } =
     useContext(FavoriteContext);
   const { pokemon } = props;
@@ -37,7 +45,7 @@ const Pokemon = (props) => {
 
           <div>#{pokemon.id}</div>
         </div>
-        <button className="detalhes-card">Detalhes</button>
+        <button className="detalhes-card" onClick={goToDetailPage}>Detalhes</button>
         <div className="card-bottom">
           <div className="pokemon-type">
             <h4>tipo: </h4>
