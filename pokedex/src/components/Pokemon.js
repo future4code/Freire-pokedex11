@@ -1,5 +1,15 @@
 import React, { useContext } from "react";
+import { typesPt, typesIcons} from "../Themes/pokemonTypeColors";
+import { Tooltip } from "@chakra-ui/react";
 import FavoriteContext from "../contexts/favoritesContext";
+
+import styled from "styled-components";
+
+export const IconeImg = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
+     `
 
 const Pokemon = (props) => {
   const { favoritePokemons, updateFavoritePokemons } =
@@ -8,9 +18,12 @@ const Pokemon = (props) => {
   const onHeartClick = () => {
     updateFavoritePokemons(pokemon.name);
   };
+
   const heart = favoritePokemons.includes(pokemon.name) ? "❤️" : "🖤";
   return (
-    <div className="pokemon-card">
+
+        <div className="pokemon-card">
+    
       <div className="pokemon-image-container">
         <img
           alt={pokemon.name}
@@ -19,21 +32,27 @@ const Pokemon = (props) => {
         />
       </div>
       <div className="card-body">
-        
         <div className="card-top">
-            
           <h3> {pokemon.name}</h3>
-          
+
           <div>#{pokemon.id}</div>
         </div>
         <button className="detalhes-card">Detalhes</button>
         <div className="card-bottom">
           <div className="pokemon-type">
             <h4>tipo: </h4>
+
             {pokemon.types.map((type, index) => {
               return (
                 <div key={index} className="pokemon-type-text">
-                  {type.type.name}
+                  <Tooltip
+                    className="typesPt"
+                    key={index}
+                    label={typesPt[type.type.name]}
+                    textTransform={"capitalize"}
+                  >
+                    <IconeImg src={typesIcons[type.type.name]} />
+                  </Tooltip>
                 </div>
               );
             })}
@@ -41,11 +60,14 @@ const Pokemon = (props) => {
           <button className="pokemon-heart-btn" onClick={onHeartClick}>
             {heart}
           </button>
-          
         </div>
       </div>
+    
     </div>
+        
+
   );
+
 };
 
 export default Pokemon;

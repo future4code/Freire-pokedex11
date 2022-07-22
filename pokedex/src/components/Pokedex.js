@@ -14,6 +14,7 @@ const Pokedex = (props) => {
           setPage(page+1)
       }
   }
+  
   return (
     <div>
       <div className="pokedex-header">
@@ -32,7 +33,10 @@ const Pokedex = (props) => {
         <div className="pokedex-grid">
           {pokemons && pokemons.map((pokemon, index) => {
             return (
+              
               <Pokemon key={index}  pokemon={pokemon}/>
+              
+              
               
             );
           })}

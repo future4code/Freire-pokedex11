@@ -1,3 +1,5 @@
+
+
 * {
   margin: 0px;
 }
@@ -63,7 +65,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
+  padding: 19px;
   background-color: #262626;
   color: white; 
 }
@@ -89,6 +91,12 @@ nav {
   
 }
 
+.IconeImg {
+  width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
 .pokemon-card {
   display: flex;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 1.25);
@@ -96,7 +104,16 @@ nav {
   border-radius: 12px;
   width: 440px;
   height: 200px;
-  margin-left: 20px;
+  margin-left: 23px;
+  background-color: rgba(22, 22, 22, 0.62);
+  backdrop-filter: blur(15px);
+  transition: all 0.5s;
+   
+}
+
+.pokemon-card:hover{
+  -webkit-transform: scale(1);
+  transform: scale(1.1);
 }
 
 .pokemon-image {
@@ -107,11 +124,12 @@ nav {
   height: 193px;
   left: 274px;
   top: 294px;
+  
 }
+
 
 .pokemon-image-container {
   padding: 0px 5px;
-  
 
 }
 
@@ -153,18 +171,50 @@ nav {
   display: flex;
   padding: 5px 8px;
   gap: 17px;
-
-  position: flex;
-  width: 91px;
-  height: 31px;
-  left: 129px;
-  top: 89px;
 }
 
 .pokemon-type-text {
-  margin-right: 10px;
-  text-transform: capitalize;
+  position: flex;
 }
+
+/* .typesPt{
+  position: flex;
+  color: white;
+  text-transform: capitalize;
+  background-color: #0d6efd;
+} */
+
+
+.typesPt{
+  margin: 0 auto; 
+  background: #7e57c2;
+  font-family: 'open sans';
+  font-size: 0.85em;
+  line-height: 1.6em;  
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+  color: #fff;
+  padding: 10px;
+  position: relative;
+  margin-top: 20px;
+}
+.typesPt:after{ /*Triangulo*/
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  /*Faz seta "apontar para baixo. Definir o valor como 'top' fará ela "apontar para cima" */
+  /*Aqui entra a cor da "aba" do balão */
+   border-bottom: 20px solid #7e57c2;
+  top: -15px; /*localização. Experimente alterar para 'bottom'*/
+   left: 33%;
+} 
+
+
+
 
 .pagination-container {
   display: flex;
