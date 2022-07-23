@@ -10,6 +10,7 @@ function Router() {
                 <Route index element={<App/>}/>
                 <Route path='detalhes/:id' element={<Detalhes/>}/>
                 <Route path='pokedex' element={<Pokedex/>}/>
+                
             </Routes>
         </BrowserRouter>
     );
