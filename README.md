@@ -1,16 +1,16 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
+- Gideony ( responsavel pelo Home)
 - Pessoa 2
 - Pessoa 3
 
-Link do Surge: www.link.com.br
+Link do Surge: https://pokedex11-home-feito.surge.sh/
 
 O que funciona:
-- Item 1
+- As funções de Pegar dados da API esta funcionando, Buscar por pokemo pelo nome esta funcionando, 
 - Item 2
 
 O que não funciona: 
-- Item 3
+- Responsividade do Grid
 - Item 4
