@@ -8,8 +8,6 @@ import { FavoriteProvider } from "./contexts/favoritesContext";
 import Footer from './components/Footer';
 
 
-
-
 const favoritesKey = "f"
 function App() {
   const [page, setPage] = useState(0);
@@ -20,7 +18,10 @@ function App() {
   const [favorites, setFavorites] = useState([]);
 
 
+
   const itensPerPage = 24;
+
+
   const fetchPokemons = async () => {
     try {
       setLoading(true);
@@ -64,6 +65,10 @@ function App() {
     }
     window.localStorage.setItem(favoritesKey, JSON.stringify(updatedFavorites))
     setFavorites(updatedFavorites);
+  }
+
+  const removePokemonFromFavorites = (id) => {
+    
   }
 
   const onSearchHandler = async (pokemon) => {
