@@ -5,7 +5,7 @@ Nome dos integrantes:
 - Pessoa 2
 - Pessoa 3
 
-Link do Surge: https://pokedex11-home-feito.surge.sh/
+Link do Surge: https://pokedex-11-home-resp.surge.sh/
 
 O que funciona:
 - As funções de Pegar dados da API esta funcionando, Buscar por pokemo pelo nome esta funcionando, 
