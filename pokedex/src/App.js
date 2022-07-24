@@ -17,7 +17,11 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-  const itensPerPage = 25;
+
+
+  const itensPerPage = 24;
+
+
   const fetchPokemons = async () => {
     try {
       setLoading(true);

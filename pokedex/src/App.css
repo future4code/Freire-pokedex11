@@ -1,8 +1,5 @@
-
-
 * {
   margin: 0px;
-  
 }
 
 nav {
@@ -78,14 +75,14 @@ nav {
 }
 
 .pokedex-grid {
-  display: grid;
+  display: flex;
   gap: 25px;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
   background-color: #262626;
   color: white;
   width: auto;
-  height: 2250px;
-  
+  height: auto;
+  flex-wrap: wrap;
 }
 
 
@@ -111,21 +108,21 @@ nav {
 
 .pokemon-card {
   display: flex;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 1.25);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 1.1);
   border: solid 1px #0e6f9f;
   border-radius: 12px;
   width: 440px;
   height: 200px;
-  margin-left: 23px;
-  background-color: rgba(22, 22, 22, 0.62);
+  margin: 0 15px 0 25px;
+  background-color: rgba(22, 22, 22, 0.5);
   backdrop-filter: blur(15px);
   transition: all 0.5s;
    
 }
 
 .pokemon-card:hover{
-  -webkit-transform: scale(1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.4);
+  transform: scale(1.05);
 }
 
 .pokemon-image {
