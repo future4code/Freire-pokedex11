@@ -1,11 +1,10 @@
 import styled from 'styled-components';
    
 export const Box = styled.div`
-  padding: 80px 60px;
+  padding: 80px 70px;
   background: black;
   position: flex;
   width: 92,5%;
-  margin-top: 0px; 
    
   @media (max-width: 1000px) {
     padding: 100px 10px;
@@ -20,6 +19,7 @@ export const Container = styled.div`
     margin-top: 15px;
     border-radius: 10px;
     border:  solid 1px #0e6f9f;
+    
 `
    
 export const Column = styled.div`
