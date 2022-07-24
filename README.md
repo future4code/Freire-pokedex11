@@ -14,3 +14,6 @@ O que funciona:
 O que não funciona: 
 - Responsividade do Grid
 - Item 4
+
+
+![image](https://user-images.githubusercontent.com/35054595/180626856-965f7ac9-9227-466e-8938-2cc6ea6e6807.png)
