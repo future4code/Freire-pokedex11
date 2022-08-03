@@ -6,6 +6,8 @@ import Pokedex from "./components/Pokedex";
 import Searchbar from "./components/Searchbar";
 import { FavoriteProvider } from "./global/favoritesContext";
 import Router from "./router/Router";
+import { FavoriteProvider } from "./contexts/favoritesContext";
+import Footer from './components/Footer';
 
 
 const favoritesKey = "f"
@@ -21,7 +23,11 @@ function App() {
 
  
 
-  const itensPerPage = 25;
+
+
+  const itensPerPage = 24;
+
+
   const fetchPokemons = async () => {
     try {
       setLoading(true);
@@ -51,7 +57,7 @@ function App() {
   
   useEffect(() => {
     fetchPokemons();
-  }, [page]);
+  }, []);
   
  
 
@@ -134,6 +140,7 @@ function App() {
 
       <div>
         <Navbar />
+        
         <Searchbar onSearch={onSearchHandler}/>
         {notFound ? (
           <div className="not-found-text"> Eeeee Olha la, Meteu essa?! </div>
@@ -146,6 +153,7 @@ function App() {
           totalPages={totalPages}
   
         />)}
+        <Footer />
       </div>
     </FavoriteProvider>
      </>
