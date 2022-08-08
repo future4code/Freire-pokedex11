@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import { typesPt, typesIcons} from "../Themes/pokemonTypeColors";
 import { Tooltip } from "@chakra-ui/react";
-import FavoriteContext from "../contexts/favoritesContext";
+import FavoriteContext from "../global/favoritesContext";
 import { useNavigate } from 'react-router-dom';
+
+
+
 
 import styled from "styled-components";
 
@@ -20,14 +23,18 @@ const Pokemon = (props) => {
     navigate('detalhes/1')
   }
 
-  const { favoritePokemons, updateFavoritePokemons } =
+  const { favoritePokemons, } =
     useContext(FavoriteContext);
+
   const { pokemon } = props;
-  const onHeartClick = () => {
-    updateFavoritePokemons(pokemon.name);
-  };
+
+  // const onHeartClick = () => {
+  //   updateFavoritePokemons(pokemon.name);
+  // };
 
   const heart = favoritePokemons.includes(pokemon.name) ? "❤️" : "🖤";
+
+
   return (
 
         <div className="pokemon-card">
@@ -48,7 +55,8 @@ const Pokemon = (props) => {
         <button className="detalhes-card" onClick={goToDetailPage}>Detalhes</button>
         <div className="card-bottom">
           <div className="pokemon-type">
-            <h4>tipo: </h4>
+            
+            <h4> tipo: </h4>
 
             {pokemon.types.map((type, index) => {
               return (
@@ -65,8 +73,9 @@ const Pokemon = (props) => {
               );
             })}
           </div>
-          <button className="pokemon-heart-btn" onClick={onHeartClick}>
+          <button className="pokemon-heart-btn" onClick={()=>props.addPokemon(pokemon)}>
             {heart}
+
           </button>
         </div>
       </div>

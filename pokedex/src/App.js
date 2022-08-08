@@ -4,6 +4,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Pokedex from "./components/Pokedex";
 import Searchbar from "./components/Searchbar";
+import { FavoriteProvider } from "./global/favoritesContext";
+import Router from "./router/Router";
 import { FavoriteProvider } from "./contexts/favoritesContext";
 import Footer from './components/Footer';
 
@@ -16,6 +18,10 @@ function App() {
   const [notFound, setNotFound] = useState(false);
   const [pokemons, setPokemons] = useState([]);
   const [favorites, setFavorites] = useState([]);
+  const [pokedexList, setPokedexList] = useState([]);
+
+
+ 
 
 
 
@@ -39,7 +45,7 @@ function App() {
       console.log("fetchPokemons error: ", error);
     }
   };
-
+ 
   const loadFavoritePokemons = () => {
     const pokemons = JSON.parse(window.localStorage.getItem(favoritesKey)) || []
     setFavorites(pokemons)
@@ -67,10 +73,6 @@ function App() {
     setFavorites(updatedFavorites);
   }
 
-  const removePokemonFromFavorites = (id) => {
-    
-  }
-
   const onSearchHandler = async (pokemon) => {
     if(!pokemon) {
       return fetchPokemons();
@@ -89,7 +91,46 @@ function App() {
     setLoading(false)
 
   }
+  const addPokemon = (pokemonToAdd) => {
+    console.log(pokemonToAdd);
+    const pokeIndex = pokemons.findIndex((item) => item.name === pokemonToAdd.name);
+    const newPokemonsList = [...pokemons];
+    newPokemonsList.splice(pokeIndex, 1);
+    const orderedPokemons = newPokemonsList.sort((a, b) => { return a.id - b.id });
+
+    const newPokedexList = [...pokedexList, pokemonToAdd];
+    const orderedPokedex = newPokedexList.sort((a, b) => { return a.id - b.id });
+
+    setPokedexList(orderedPokedex);
+    setPokemons(orderedPokemons);
+  }
+
+  const removePokemon = (pokemonToRemove) => {
+    const pokeIndex = pokedexList.findIndex((item) => item.name === pokemonToRemove.name);
+    const newPokedexList = [...pokedexList];
+    newPokedexList.splice(pokeIndex, 1);
+    const orderedPokedex = newPokedexList.sort((a, b) => { return a.id - b.id });
+
+    const newPokemonsList = [...pokemons, pokemonToRemove];
+    const orderedPokemons = newPokemonsList.sort((a, b) => { return a.id - b.id });
+
+    setPokedexList(orderedPokedex);
+    setPokemons(orderedPokemons);
+  }
   return (
+    <>
+    
+
+    <Router
+      pokedexList={pokedexList}
+      addPokemon={addPokemon}
+      removePokemon={removePokemon}
+    />
+
+ 
+
+  
+    
     <FavoriteProvider
       value={{
         favoritePokemons: favorites,
@@ -115,6 +156,11 @@ function App() {
         <Footer />
       </div>
     </FavoriteProvider>
+     </>
+     
+     
+   
+      
   );
 }
 
